@@ -1,0 +1,31 @@
+#events-container {
+  width: 100%;
+  margin-left: 7.55%;
+}
+
+.event {
+  width: 90%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  border-bottom: 1px solid grey;
+}
+
+.event-item {
+  display: inline-block;
+}
+
+#date-wrapper {
+  width: 10%;
+}
+
+#venue-wrapper {
+  width: 40%;
+}
+
+#location-wrapper {
+  width: 35%;
+}
+
+#tickets-button-wrapper {
+  width: 15%;
+}

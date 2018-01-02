@@ -22,7 +22,7 @@ class EventList extends React.Component {
   render() {
 
     return (
-      <div>
+      <div id="events-container">
         { Object.keys(this.state.events).map((key, index) => {
           var event = this.state.events[key];
           var region = event.venue.country === "United States" ?
@@ -31,11 +31,24 @@ class EventList extends React.Component {
           var date = moment(event.datetime).format("MMM D");
           var url = event.offers[0].url
           return (
-            <div>
-              <p>Date: { date }</p>
-              <p>Venue Name: {event.venue.name}</p>
-              <p>Location: { location }</p>
-              Tickets: <a href={ url }>Tickets</a>
+            <div className="event">
+              <div className="event-item" id="date-wrapper">
+                <span id="date">{ date }</span>
+              </div>
+
+              <div className="event-item" id="venue-wrapper">
+                <span>{event.venue.name}</span>
+              </div>
+
+              <div className="event-item" id="location-wrapper">
+                <span>{ location }</span>
+              </div>
+
+              <div className="event-item" id="tickets-button-wrapper">
+                <div id="tickets-button">
+                  <a href={ url }>Tickets</a>
+                </div>
+              </div>
             </div>
           )
         }) }
