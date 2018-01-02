@@ -1,10 +1,10 @@
 #events-container {
   width: 100%;
-  margin-left: 7.55%;
+  margin-left: 10%;
 }
 
 .event {
-  width: 90%;
+  width: 80%;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
   border-bottom: 1px solid grey;
@@ -15,11 +15,19 @@
 }
 
 #date-wrapper {
-  width: 10%;
+  width: 15%;
+}
+
+#date {
+  margin-left: 15%;
+  font-size: 18px;
+  font-weight: 900;
+  color: #028482;
 }
 
 #venue-wrapper {
-  width: 40%;
+  font-weight: 900;
+  width: 35%;
 }
 
 #location-wrapper {
@@ -28,4 +36,21 @@
 
 #tickets-button-wrapper {
   width: 15%;
+  text-align: right;
+}
+
+#tickets-button {
+  text-decoration: none;
+  margin-right: 15%;
+  font-weight: 600;
+  padding: 5% 7.5% 5% 7.5%;
+  border-radius: 5px;
+  color: #028482;
+  border: 1px solid #028482;
+}
+
+#tickets-button:hover {
+  cursor: pointer;
+  background-color: #028482;
+  color: white;
 }

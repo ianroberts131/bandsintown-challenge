@@ -45,9 +45,7 @@ class EventList extends React.Component {
               </div>
 
               <div className="event-item" id="tickets-button-wrapper">
-                <div id="tickets-button">
-                  <a href={ url }>Tickets</a>
-                </div>
+                <a id="tickets-button" href={ url }>Tickets</a>
               </div>
             </div>
           )
