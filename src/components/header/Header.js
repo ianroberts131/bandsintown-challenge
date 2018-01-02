@@ -11,7 +11,7 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://rest.bandsintown.com/artists/Darkest%20Hour?app_id=bit_challenge')
+    fetch('https://rest.bandsintown.com/artists/Kasabian?app_id=bit_challenge')
     .then(results => {
       return results.json();
     }).then(data => {
