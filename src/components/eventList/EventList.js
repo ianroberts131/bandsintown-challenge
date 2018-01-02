@@ -1,5 +1,6 @@
 import React from 'react';
 import './eventList.css'
+var moment = require('moment');
 
 class EventList extends React.Component {
   constructor() {
@@ -27,12 +28,14 @@ class EventList extends React.Component {
           var region = event.venue.country === "United States" ?
             event.venue.region : event.venue.country;
           var location = event.venue.city + ", " + region;
+          var date = moment(event.datetime).format("MMM D");
+          var url = event.offers[0].url
           return (
             <div>
-              <p>Date: { event.datetime }</p>
+              <p>Date: { date }</p>
               <p>Venue Name: {event.venue.name}</p>
               <p>Location: { location }</p>
-              Tickets: <a href={ event.offers[0].url }>Tickets</a>
+              Tickets: <a href={ url }>Tickets</a>
             </div>
           )
         }) }
