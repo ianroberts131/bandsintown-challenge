@@ -1,0 +1,33 @@
+#header-container {
+  width: 100%;
+  margin-left: 10%;
+  margin-top: 2.5%;
+}
+
+#artist-image {
+  display: inline-block;
+  height: 150px;
+  width: auto;
+}
+
+#header-text-section {
+  display: inline-block;
+  height: 150px;
+  vertical-align: top;
+  margin-left: 1%;
+}
+
+#header-text-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#artist-name {
+  color: #028482;
+  margin: 0;
+}
+
+#upcoming-events-header {
+  margin: 0;
+}
