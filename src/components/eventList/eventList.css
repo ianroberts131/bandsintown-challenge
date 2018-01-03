@@ -39,6 +39,10 @@
   text-align: right;
 }
 
+#hide-ticket {
+  display: none;
+}
+
 #tickets-button {
   text-decoration: none;
   margin-right: 15%;
