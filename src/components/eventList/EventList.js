@@ -1,5 +1,6 @@
 import React from 'react';
 import './eventList.css'
+import NoEvents from '../noEvents/NoEvents';
 var moment = require('moment');
 
 class EventList extends React.Component {
@@ -20,9 +21,15 @@ class EventList extends React.Component {
   }
 
   render() {
-
+    // If there are no events, display the NoEvents component.
+    // Otherwise, nothing renders and events are mapped over and displayed.
+    var noEvents;
+    if(this.state.events.length === 0) {
+      noEvents = <NoEvents/>;
+    }
     return (
-      <div id="events-container">
+      <div>
+        { noEvents }
         { this.state.events.map((event) => {
           var region = event.venue.country === "United States" ?
             event.venue.region : event.venue.country;
@@ -31,18 +38,20 @@ class EventList extends React.Component {
           var url = event.offers.length > 0 ? event.offers[0].url : "no ticket";
           var ticketsId = url === "no ticket" ? "hide-ticket" : "tickets-button-wrapper";
           return (
-            <div className="event">
-              <div className="event-item" id="date-wrapper">
-                <span id="date">{ date }</span>
-              </div>
-              <div className="event-item" id="venue-wrapper">
-                <span>{event.venue.name}</span>
-              </div>
-              <div className="event-item" id="location-wrapper">
-                <span>{ location }</span>
-              </div>
-              <div className="event-item" id={ ticketsId }>
-                <a id="tickets-button" href={ url }>Tickets</a>
+            <div id="events-container">
+              <div className="event">
+                <div className="event-item" id="date-wrapper">
+                  <span id="date">{ date }</span>
+                </div>
+                <div className="event-item" id="venue-wrapper">
+                  <span>{event.venue.name}</span>
+                </div>
+                <div className="event-item" id="location-wrapper">
+                  <span>{ location }</span>
+                </div>
+                <div className="event-item" id={ ticketsId }>
+                  <a id="tickets-button" href={ url }>Tickets</a>
+                </div>
               </div>
             </div>
           )

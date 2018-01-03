@@ -1,10 +1,14 @@
 #events-container {
-  width: 100%;
+  width: 90%;
   margin-left: 10%;
 }
 
+.hiddenSection {
+  display: none;
+}
+
 .event {
-  width: 80%;
+  width: 90%;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
   border-bottom: 1px solid grey;
