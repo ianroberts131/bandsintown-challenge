@@ -1,5 +1,6 @@
 import React from 'react';
-import './eventList.css'
+import './eventList.css';
+import Event from '../event/Event';
 import NoEvents from '../noEvents/NoEvents';
 var moment = require('moment');
 
@@ -28,32 +29,19 @@ class EventList extends React.Component {
       noEvents = <NoEvents/>;
     }
     return (
-      <div>
+      <div id="events-container">
         { noEvents }
         { this.state.events.map((event) => {
           var region = event.venue.country === "United States" ?
             event.venue.region : event.venue.country;
           var location = event.venue.city + ", " + region;
+          var venue = event.venue.name;
           var date = moment(event.datetime).format("MMM D");
           var url = event.offers.length > 0 ? event.offers[0].url : "no ticket";
           var ticketsId = url === "no ticket" ? "hide-ticket" : "tickets-button-wrapper";
           return (
-            <div id="events-container">
-              <div className="event">
-                <div className="event-item" id="date-wrapper">
-                  <span id="date">{ date }</span>
-                </div>
-                <div className="event-item" id="venue-wrapper">
-                  <span>{event.venue.name}</span>
-                </div>
-                <div className="event-item" id="location-wrapper">
-                  <span>{ location }</span>
-                </div>
-                <div className="event-item" id={ ticketsId }>
-                  <a id="tickets-button" href={ url }>Tickets</a>
-                </div>
-              </div>
-            </div>
+            <Event date={ date } venue={ venue } location={ location }
+                    url={ url } ticketsId={ ticketsId }/>
           )
         }) }
       </div>
