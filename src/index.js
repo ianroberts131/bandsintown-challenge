@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import './index.css';
 import App from './App';
 import NotFound from './components/notFound/NotFound';
 import registerServiceWorker from './registerServiceWorker';
@@ -11,7 +10,10 @@ const Root = () => {
   return (
     <BrowserRouter>
       <div>
-        <Route exactly pattern="/:band" component={ App }/>
+        <Switch>
+        <Route exact path="/:band" component={ App }/>
+        <Route component={ NotFound } />
+        </Switch>
       </div>
     </BrowserRouter>
   )

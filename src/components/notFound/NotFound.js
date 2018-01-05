@@ -1,9 +1,12 @@
 import React from 'react';
+import './notFound.css';
 
 class NotFound extends React.Component {
   render() {
     return (
-      <h1>Not Found</h1>
+      <div id="route-not-found">
+        Invalid URL.
+      </div>
     )
   }
 }
