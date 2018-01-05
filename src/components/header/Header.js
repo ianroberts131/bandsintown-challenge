@@ -1,12 +1,14 @@
 import React from 'react';
 import './header.css'
+var defaultImage = require('../../images/bandsintown-logo.png');
 
 class Header extends React.Component {
   constructor() {
     super();
     this.state = {
       artistImage: "",
-      artistName: ""
+      artistName: "",
+      imageLoadFail: false
     }
   }
 
@@ -25,11 +27,19 @@ class Header extends React.Component {
     })
   }
 
-  render() {
+  _onError = () => {
+    this.setState({ imageLoadFail: true });
+  }
 
+  render() {
+    var artistImage = this.state.artistImage;
+    // If the image fails to load, imageLoadFail is set to true
+    // Within image tag, if imageLoadFail is true, display Bandsintown logo
+    var imageFailed = this.state.imageLoadFail;
     return (
       <div id="header-container">
-        <img id="artist-image" src={this.state.artistImage}/>
+        <img id="artist-image" src={ imageFailed ? artistImage : defaultImage }
+                                onError={ this._onError }/>
         <div id="header-text-section">
           <div id="header-text-wrapper">
             <h2 id="artist-name">{this.state.artistName}</h2>
