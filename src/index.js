@@ -1,8 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
+import NotFound from './components/notFound/NotFound';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Root = () => {
+  return (
+    <BrowserRouter>
+      <div>
+        <Route exactly pattern="/:band" component={ App }/>
+      </div>
+    </BrowserRouter>
+  )
+}
+
+render(<Root />, document.getElementById('root'));
 registerServiceWorker();

@@ -11,7 +11,10 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://rest.bandsintown.com/artists/Kasabian?app_id=bit_challenge')
+    var bandName = this.props.bandName;
+    var apiRequest = "https://rest.bandsintown.com/artists"
+                      + bandName + "/?app_id=bit_challenge";
+    fetch(apiRequest)
     .then(results => {
       return results.json();
     }).then(data => {

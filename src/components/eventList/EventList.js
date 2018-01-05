@@ -13,7 +13,10 @@ class EventList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://rest.bandsintown.com/artists/Kasabian/events?app_id=bit_challenge')
+    var bandName = this.props.bandName;
+    var apiRequest = "https://rest.bandsintown.com/artists"
+                      + bandName + "/events?app_id=bit_challenge";
+    fetch(apiRequest)
     .then(results => {
       return results.json();
     }).then(data => {
@@ -30,18 +33,21 @@ class EventList extends React.Component {
     }
     return (
       <div id="events-container">
+
         { noEvents }
+
         { this.state.events.map((event) => {
+
           var region = event.venue.country === "United States" ?
             event.venue.region : event.venue.country;
           var location = event.venue.city + ", " + region;
+
           var venue = event.venue.name;
           var date = moment(event.datetime).format("MMM D");
-          var url = event.offers.length > 0 ? event.offers[0].url : "no ticket";
-          var ticketsId = url === "no ticket" ? "hide-ticket" : "tickets-button-wrapper";
+
           return (
-            <Event date={ date } venue={ venue } location={ location }
-                    url={ url } ticketsId={ ticketsId }/>
+            <Event event = { event } date={ date } venue={ venue }
+                    location={ location } />
           )
         }) }
       </div>

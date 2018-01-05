@@ -6,12 +6,13 @@ import './App.css';
 
 class App extends Component {
   render() {
-    var eventComponent = <EventList />;
-
+    var bandName = this.props.location.pathname;
+    var apiRequest = "https://rest.bandsintown.com/artists"
+                      + bandName + "/events?app_id=bit_challenge";
     return (
       <div className="App">
-        <Header />
-        <EventList />
+        <Header bandName={ bandName } />
+        <EventList bandName={ bandName } />
       </div>
     );
   }
