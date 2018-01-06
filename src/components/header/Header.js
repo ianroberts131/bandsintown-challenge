@@ -7,8 +7,7 @@ class Header extends React.Component {
     super();
     this.state = {
       artistImage: "",
-      artistName: "",
-      imageLoadFail: false
+      artistName: ""
     }
   }
 
@@ -27,19 +26,19 @@ class Header extends React.Component {
     })
   }
 
-  _onError = () => {
-    this.setState({ imageLoadFail: true });
+  // If the image fails to load, change the artist image to the
+  // Bandsintown logo
+  handleImageError = () => {
+    this.setState({ artistImage: defaultImage });
   }
 
   render() {
+
     var artistImage = this.state.artistImage;
-    // If the image fails to load, imageLoadFail is set to true
-    // Within image tag, if imageLoadFail is true, display Bandsintown logo
-    var imageFailed = this.state.imageLoadFail;
     return (
       <div id="header-container">
-        <img id="artist-image" src={ imageFailed ? artistImage : defaultImage }
-                                onError={ this._onError }/>
+        <img id="artist-image" src={ artistImage }
+                                onError={ () => this.handleImageError() }/>
         <div id="header-text-section">
           <div id="header-text-wrapper">
             <h2 id="artist-name">{this.state.artistName}</h2>
