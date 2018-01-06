@@ -37,7 +37,7 @@ class Header extends React.Component {
     var artistImage = this.state.artistImage;
     return (
       <div id="header-container">
-        <img id="artist-image" src={ artistImage }
+        <img id="artist-image" alt="Artist Graphic" src={ artistImage }
                                 onError={ () => this.handleImageError() }/>
         <div id="header-text-section">
           <div id="header-text-wrapper">

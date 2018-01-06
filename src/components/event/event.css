@@ -1,23 +1,31 @@
 .event {
   width: 90%;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
+  height: 75px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   border-bottom: 1px solid grey;
 }
 
-#event-information-section {
-  width: 85%;
-  display: inline-block;
-}
-
-#event-information-wrapper {
+.vertical-center {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
 
+#event-information-section {
+  height: 75px;
+  width: 85%;
+  display: inline-block;
+}
+
+#event-information-wrapper {
+  height: 100%;
+}
+
 .event-item {
   display: inline-block;
+  height: 100%;
+  vertical-align: top;
 }
 
 #date-wrapper {
@@ -41,6 +49,8 @@
 }
 
 #tickets-button-section {
+  display: inline-block;
+  height: 75px;
   width: 15%;
   text-align: center;
 }
@@ -58,8 +68,9 @@
 #tickets-button {
   text-decoration: none;
   margin-right: 15%;
-  font-weight: 600;
-  padding: 5% 7.5% 5% 7.5%;
+  font-size: 16px;
+  font-weight: 550;
+  padding: 10px 20px 10px 20px;
   border-radius: 5px;
   color: #00C5CD;
   border: 1px solid #00C5CD;
@@ -72,15 +83,29 @@
 }
 
 @media only screen and (max-width: 650px) {
+  .vertical-center {
+    top: 0;
+    transform: translateY(0);
+  }
+
   .event {
     width: 100%;
-    height: 70px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+
+  #event-information-wrapper {
+    height: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .event-item {
+    height: auto;
   }
 
   #event-information-section {
-    height: 70px;
     width: 70%;
     margin-left: 5%;
   }
@@ -101,12 +126,12 @@
   #tickets-button-section {
     vertical-align: bottom;
     width: 25%;
-    height: 70px;
   }
 
   #tickets-button {
     display: block;
     font-weight: 600;
-    padding: 10% 15% 10% 15%;
+    font-size: 13px;
+    padding: 10px 15px 10px 15px;
   }
 }
