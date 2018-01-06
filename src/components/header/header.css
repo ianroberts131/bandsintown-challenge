@@ -24,10 +24,27 @@
 }
 
 #artist-name {
-  color: #028482;
+  color: #00C5CD;
   margin: 0;
 }
 
 #upcoming-events-header {
   margin: 0;
 }
+
+  @media only screen and (max-width: 650px) {
+    #header-container {
+      margin-top: 7.5%;
+      margin-left: 5%;
+    }
+
+    #header-text-section {
+      margin-left: 5%;
+      height: 100px;
+    }
+
+    #artist-image {
+      height: 100px;
+      width: auto;
+    }
+  }

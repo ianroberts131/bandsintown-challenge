@@ -5,33 +5,50 @@
   border-bottom: 1px solid grey;
 }
 
+#event-information-section {
+  width: 85%;
+  display: inline-block;
+}
+
+#event-information-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .event-item {
   display: inline-block;
 }
 
 #date-wrapper {
-  width: 15%;
+  width: 20%;
 }
 
 #date {
   margin-left: 15%;
   font-size: 18px;
   font-weight: 900;
-  color: #028482;
+  color: #00C5CD;
 }
 
 #venue-wrapper {
   font-weight: 900;
-  width: 35%;
+  width: 40%;
 }
 
 #location-wrapper {
-  width: 35%;
+  width: 40%;
+}
+
+#tickets-button-section {
+  width: 15%;
+  text-align: center;
 }
 
 #tickets-button-wrapper {
-  width: 15%;
-  text-align: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #hide-ticket {
@@ -44,12 +61,52 @@
   font-weight: 600;
   padding: 5% 7.5% 5% 7.5%;
   border-radius: 5px;
-  color: #028482;
-  border: 1px solid #028482;
+  color: #00C5CD;
+  border: 1px solid #00C5CD;
 }
 
 #tickets-button:hover {
   cursor: pointer;
-  background-color: #028482;
+  background-color: #00C5CD;
   color: white;
+}
+
+@media only screen and (max-width: 650px) {
+  .event {
+    width: 100%;
+    height: 70px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  #event-information-section {
+    height: 70px;
+    width: 70%;
+    margin-left: 5%;
+  }
+
+  #date {
+    margin-left: 0;
+    font-size: 13px;
+  }
+
+  #date-wrapper, #venue-wrapper, #location-wrapper {
+    width: 100%;
+  }
+
+  #venue-wrapper, #location-wrapper {
+    margin-top: 5px;
+  }
+
+  #tickets-button-section {
+    vertical-align: bottom;
+    width: 25%;
+    height: 70px;
+  }
+
+  #tickets-button {
+    display: block;
+    font-weight: 600;
+    padding: 10% 15% 10% 15%;
+  }
 }
