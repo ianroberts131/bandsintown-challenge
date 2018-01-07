@@ -6,11 +6,7 @@
   border-bottom: 1px solid grey;
 }
 
-.vertical-center {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
+/* Date, Venue, and Location specific CSS */
 
 #event-information-section {
   height: 75px;
@@ -47,6 +43,8 @@
 #location-wrapper {
   width: 40%;
 }
+
+/* Tickets specific CSS */
 
 #tickets-button-section {
   text-align: right;
@@ -97,11 +95,6 @@ some padding included.
 
 /* Media queries for mobile layout */
 @media only screen and (max-width: 625px) {
-  .vertical-center {
-    top: 0;
-    transform: translateY(0);
-  }
-
   .event {
     padding-bottom: 15px;
     padding-top: 15px;
@@ -136,6 +129,11 @@ some padding included.
     margin-top: 5px;
   }
 
+  #venue, #date, #location {
+    top: 0;
+    transform: translateY(0);
+  }
+
   #tickets-button-section {
     vertical-align: bottom;
     width: 27.5%;
@@ -147,6 +145,7 @@ some padding included.
     font-size: 14px;
     padding: 10px 12.5px 10px 12.5px;
   }
+
 }
 
 /* Media queries for certain font sizes on smaller screens */

@@ -1,3 +1,5 @@
+/* Global styles */
+
 .Home {
   width: 100%;
 }
@@ -13,6 +15,14 @@ body {
   font-size: 16px;
 }
 
+/* Used throughout to vertically center divs  */
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Global font media queries */
 @media only screen and (max-width: 800px) {
   body {
     font-size: 14px;

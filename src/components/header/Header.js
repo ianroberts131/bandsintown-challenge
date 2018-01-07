@@ -42,7 +42,7 @@ class Header extends React.Component {
         <img id="artist-image" alt="Artist Graphic" src={ artistImage }
                                 onError={ () => this.handleImageError() }/>
         <div id="header-text-section">
-          <div id="header-text-wrapper">
+          <div id="header-text-wrapper" className="vertical-center">
             <h2 id="artist-name">{ this.state.artistName }</h2>
             <h2 id="upcoming-events-header">Upcoming Events</h2>
           </div>
