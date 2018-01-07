@@ -32,7 +32,7 @@
   margin-left: 15%;
   font-size: 18px;
   font-weight: 900;
-  color: #00C5CD;
+  color: #1cb0a1;
 }
 
 #venue-wrapper {
@@ -71,13 +71,13 @@
   font-weight: 550;
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
-  color: #00C5CD;
-  border: 1px solid #00C5CD;
+  color: #1cb0a1;
+  border: 1px solid #1cb0a1;
 }
 
 #tickets-button:hover {
   cursor: pointer;
-  background-color: #00C5CD;
+  background-color: #1cb0a1;
   color: white;
 }
 
