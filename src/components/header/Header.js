@@ -26,8 +26,10 @@ class Header extends React.Component {
     })
   }
 
-  // If the image fails to load, change the artist image to the
-  // Bandsintown logo
+  /*
+  If the image fails to load, change the artist image to the
+  Bandsintown logo
+  */
   handleImageError = () => {
     this.setState({ artistImage: defaultImage });
   }
@@ -41,7 +43,7 @@ class Header extends React.Component {
                                 onError={ () => this.handleImageError() }/>
         <div id="header-text-section">
           <div id="header-text-wrapper">
-            <h2 id="artist-name">{this.state.artistName}</h2>
+            <h2 id="artist-name">{ this.state.artistName }</h2>
             <h2 id="upcoming-events-header">Upcoming Events</h2>
           </div>
         </div>

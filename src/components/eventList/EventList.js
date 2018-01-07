@@ -28,15 +28,13 @@ class EventList extends React.Component {
     // If there are no events, display the NoEvents component.
     // Otherwise, nothing renders and events are mapped over and displayed.
     var noEvents;
-    if(this.state.events.length === 0) {
-      noEvents = <NoEvents/>;
+    if (this.state.events.length === 0) {
+      noEvents = <NoEvents />;
     }
     return (
       <div id="events-container">
 
-        { noEvents }
-
-        { this.state.events.map((event) => {
+        { this.state.events.map((event, index) => {
 
           var region = event.venue.country === "United States" ?
             event.venue.region : event.venue.country;
@@ -47,9 +45,12 @@ class EventList extends React.Component {
 
           return (
             <Event event = { event } date={ date } venue={ venue }
-                    location={ location } />
+                    location={ location } key={ index } />
           )
         }) }
+
+        { noEvents }
+
       </div>
     )
 

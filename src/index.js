@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './App';
-import NotFound from './components/notFound/NotFound';
+import InvalidURL from './components/invalidURL/InvalidURL';
 import registerServiceWorker from './registerServiceWorker';
 
 const Root = () => {
@@ -11,8 +11,8 @@ const Root = () => {
     <BrowserRouter>
       <div>
         <Switch>
-        <Route exact path="/:band" component={ App }/>
-        <Route component={ NotFound } />
+          <Route exact path="/:band" component={ App }/>
+          <Route component={ InvalidURL } />
         </Switch>
       </div>
     </BrowserRouter>
