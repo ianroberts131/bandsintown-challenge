@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import App from './App';
+import Home from './Home';
 import InvalidURL from './components/invalidURL/InvalidURL';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -11,7 +11,7 @@ const Root = () => {
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/:band" component={ App }/>
+          <Route exact path="/:band" component={ Home }/>
           <Route component={ InvalidURL } />
         </Switch>
       </div>

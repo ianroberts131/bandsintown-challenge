@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Header from './components/header/Header';
 import EventList from './components/eventList/EventList';
-import './App.css';
+import './Home.css';
 
-class App extends Component {
+class Home extends Component {
   render() {
     // React router provides location of application to components routed to
     // Since URL will be '/:url_escaped_artist_name', the 'pathname'
@@ -11,7 +11,7 @@ class App extends Component {
     var bandName = this.props.location.pathname;
 
     return (
-      <div className="App">
+      <div className="Home">
         <Header bandName={ bandName } />
         <EventList bandName={ bandName } />
       </div>
@@ -19,4 +19,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
