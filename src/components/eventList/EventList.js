@@ -8,7 +8,8 @@ class EventList extends React.Component {
   constructor() {
     super();
     this.state = {
-      events: []
+      events: [],
+      noBandFound: false
     }
   }
 
@@ -17,11 +18,23 @@ class EventList extends React.Component {
     var apiRequest = "https://rest.bandsintown.com/artists"
                       + bandName + "/events?app_id=bit_challenge";
     fetch(apiRequest)
-    .then(results => {
-      return results.json();
-    }).then(data => {
-      this.setState({ events: data })
+    .then(response => {
+      // Check if response is successful
+      if (!response.ok) { throw response }
+      // Convert the response to json
+      return response.json()
     })
+    .then(data => {
+      /*
+      The API response is an array with all of the events.
+      Store this entire array in the events array in state.
+      Will then be able to map over events and pull data as needed.
+      */
+      this.setState({ events: data });
+    }).catch( error => {
+        this.setState({ noBandFound: true });
+        console.log("There was an error: ", error);
+    });
   }
 
   render() {
@@ -29,24 +42,31 @@ class EventList extends React.Component {
     // Otherwise, nothing renders and events are mapped over and displayed.
     var noEvents;
     if (this.state.events.length === 0) {
-      noEvents = <NoEvents />;
+      noEvents = <NoEvents noBandFound={ this.state.noBandFound }/>;
     }
     return (
       <div id="events-container">
 
         { this.state.events.map((event, index) => {
 
-          var region = event.venue.country === "United States" ?
-            event.venue.region : event.venue.country;
-          var location = event.venue.city + ", " + region;
+            /*
+            US based events are of the form 'city, region'
+            Otherwise, events are of the form 'city, country'
+            Determine the region/country here before concatenating with city
+            */
+            var region = event.venue.country === "United States" ?
+              event.venue.region : event.venue.country;
+            var location = event.venue.city + ", " + region;
 
-          var venue = event.venue.name;
-          var date = moment(event.datetime).format("MMM D");
+            var venue = event.venue.name;
 
-          return (
-            <Event event = { event } date={ date } venue={ venue }
-                    location={ location } key={ index } />
-          )
+            // Use the moment.js library to format the date
+            var date = moment(event.datetime).format("MMM D");
+
+            return (
+              <Event event = { event } date={ date } venue={ venue }
+                      location={ location } key={ index } />
+            )
         }) }
 
         { noEvents }
