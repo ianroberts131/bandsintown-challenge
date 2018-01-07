@@ -32,19 +32,20 @@
   margin: 0;
 }
 
-  @media only screen and (max-width: 650px) {
-    #header-container {
-      margin-top: 7.5%;
-      margin-left: 5%;
-    }
-
-    #header-text-section {
-      margin-left: 5%;
-      height: 100px;
-    }
-
-    #artist-image {
-      height: 100px;
-      width: auto;
-    }
+/* Media queries for mobile layout */
+@media only screen and (max-width: 800px) {
+  #header-container {
+    margin-top: 7.5%;
+    margin-left: 5%;
   }
+
+  #header-text-section {
+    margin-left: 5%;
+    height: 100px;
+  }
+
+  #artist-image {
+    height: 100px;
+    width: auto;
+  }
+}

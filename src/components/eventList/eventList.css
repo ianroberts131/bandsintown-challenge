@@ -14,7 +14,11 @@
   border-bottom: 1px solid grey;
 }
 
-@media only screen and (max-width: 650px) {
+/* On ipads and smaller screens that don't hit the mobile layout breakpoint,
+remove left margin and have each event span the entire screen with
+some padding included.
+*/
+@media only screen and (max-width: 800px) {
   #events-container {
     margin-left: 0;
     width: 100%;

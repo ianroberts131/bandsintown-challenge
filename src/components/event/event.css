@@ -49,10 +49,10 @@
 }
 
 #tickets-button-section {
+  text-align: right;
   display: inline-block;
   height: 75px;
   width: 15%;
-  text-align: center;
 }
 
 #tickets-button-wrapper {
@@ -67,6 +67,7 @@
 
 #tickets-button {
   text-decoration: none;
+  text-align: center;
   margin-right: 15%;
   font-size: 16px;
   font-weight: 550;
@@ -82,14 +83,26 @@
   color: white;
 }
 
-@media only screen and (max-width: 650px) {
+/* On ipads and smaller screens that don't hit the mobile layout breakpoint,
+remove left margin and have each event span the entire screen with
+some padding included.
+*/
+@media only screen and (max-width: 800px) {
+  .event {
+    width: 95%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+}
+
+/* Media queries for mobile layout */
+@media only screen and (max-width: 625px) {
   .vertical-center {
     top: 0;
     transform: translateY(0);
   }
 
   .event {
-    width: 100%;
     padding-bottom: 15px;
     padding-top: 15px;
   }
@@ -106,13 +119,13 @@
   }
 
   #event-information-section {
-    width: 70%;
+    width: 67.5%;
     margin-left: 5%;
   }
 
   #date {
     margin-left: 0;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   #date-wrapper, #venue-wrapper, #location-wrapper {
@@ -125,13 +138,32 @@
 
   #tickets-button-section {
     vertical-align: bottom;
-    width: 25%;
+    width: 27.5%;
   }
 
   #tickets-button {
     display: block;
     font-weight: 600;
+    font-size: 14px;
+    padding: 10px 12.5px 10px 12.5px;
+  }
+}
+
+/* Media queries for certain font sizes on smaller screens */
+@media only screen and (max-width: 800px) {
+  #date, #tickets-button {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #date, #tickets-button {
     font-size: 13px;
-    padding: 10px 15px 10px 15px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #date, #tickets-button {
+    font-size: 12px;
   }
 }
