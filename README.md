@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In order to use the application, enter a url escaped artist on the root path of the application (i.e. localhost:3000/?artist=:url_escaped_artist_name)
 
+## Components
+
 The key components displayed on the events view are the following:
 
 ### Header
@@ -13,3 +15,7 @@ Displays the artist image and artist name pulled from the Bandsintown API. For t
 
 ### Event List
 Displays the date, venue, and location of upcoming events. Additionally, if tickets are available, a button to purchase tickets is displayed.
+
+## API Requests
+
+API requests are performed using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
