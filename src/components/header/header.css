@@ -42,10 +42,17 @@
   #header-text-section {
     margin-left: 5%;
     height: 100px;
+    max-width: 80%; /* prevent long band names from breaking to next line */
   }
 
   #artist-image {
     height: 100px;
     width: auto;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  #header-text-section {
+    max-width: 60%; /* prevent long band names from breaking to next line */
   }
 }
